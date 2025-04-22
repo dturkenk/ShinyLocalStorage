@@ -1,6 +1,6 @@
 Package: ShinyLocalStorage
 Title: Client-local Key/Value Store for Shiny
-Version: 0.0.0.1
+Version: 0.0.0.2
 Authors@R: 
     person("Dan", "Turkenkopf", , "dturkenk@gmail.com", role = c("aut", "cre"))
 Description: Provides a way for Shiny apps to persist key/value pairs to the client's machine
