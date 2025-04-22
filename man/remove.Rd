@@ -17,7 +17,7 @@ Note: the namespaced \code{input} object will still exist.
 \examples{
 if(interactive()) {
  observeEvent(input$remove, {
-   remove("stored_element") 
+   remove("stored_element")
  })
-} 
+}
 }

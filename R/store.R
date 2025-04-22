@@ -3,8 +3,9 @@
 #' This must be called from within a Shiny app's UI.
 #'
 #' The ShinyLocalStorage Javascript library and dependencies
-#' will be inserted as script tags in the page header.
+#' will be inserted as script tags in the page.
 #'
+#' @param container The HTML container to attach the local storage scripts to. Defaults to a div with id = "shiny-local-storage"
 #' @examples
 #' if (interactive()) {
 #'   library(shiny)
@@ -24,14 +25,20 @@
 #'   )
 #' }
 #' @export
-useShinyLocalStorage <- function() {
-    template.loc <- file.path(find.package(package = .packageName), "www")
+useShinyLocalStorage <- function(container = NULL) {
+  if(is.null(container)) {
+    container = htmltools::tags$div(id = "shiny-local-storage")
+  }
 
+  template.loc <- file.path(find.package(package = .packageName), "www")
+
+  htmltools::attachDependencies(container,
     htmltools::htmlDependency("shinyLocalStorage",
         "0.1.0",
         src = template.loc,
         script = c("shinyLocalStorage.js", "localforage.min.js")
     )
+  )
 }
 
 #' Configures the ShinyLocalStorage instance for a given page / app.

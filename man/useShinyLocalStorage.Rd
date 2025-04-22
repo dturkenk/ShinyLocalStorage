@@ -4,14 +4,17 @@
 \alias{useShinyLocalStorage}
 \title{Set up a Shiny app to use ShinyLocalStorage}
 \usage{
-useShinyLocalStorage()
+useShinyLocalStorage(container = NULL)
+}
+\arguments{
+\item{container}{The HTML container to attach the local storage scripts to. Defaults to a div with id = "shiny-local-storage"}
 }
 \description{
 This must be called from within a Shiny app's UI.
 }
 \details{
 The ShinyLocalStorage Javascript library and dependencies
-will be inserted as script tags in the page header.
+will be inserted as script tags in the page.
 }
 \examples{
 if (interactive()) {

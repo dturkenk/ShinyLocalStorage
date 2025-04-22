@@ -15,7 +15,7 @@ Clears all items from the local storage.
 \examples{
 if(interactive()) {
  observeEvent(input$clear, {
-  clear() 
+  clear()
  })
 }
 }
