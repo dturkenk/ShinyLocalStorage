@@ -25,10 +25,11 @@
 #' }
 #' @export
 useShinyLocalStorage <- function() {
+    template.loc <- file.path(find.package(package = .packageName), "www")
 
     htmltools::htmlDependency("shinyLocalStorage",
         "0.1.0",
-        src = "www",
+        src = template.loc,
         script = c("shinyLocalStorage.js", "localforage.min.js")
     )
 }
