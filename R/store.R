@@ -36,7 +36,7 @@ useShinyLocalStorage <- function(container = NULL) {
     htmltools::htmlDependency("shinyLocalStorage",
         "0.1.0",
         src = template.loc,
-        script = c("shinyLocalStorage.js", "localforage.min.js")
+        script = c("shinylocalstorage.js", "localforage.min.js")
     )
   )
 }
